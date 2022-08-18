@@ -44,7 +44,7 @@ module.exports.contactForm = async (event) => {
       }
     })
     let info = await transporter.sendMail({
-      from: '"Portfolio Website" <dev.ktaulman@gmail.com>', 
+      from: `Portfolio Website <${process.env.GOOGLE_TO}>`, 
       to: process.env.GOOGLE_TO,
       subject: "Portfolio Website", 
       text: "Hello world?",
