@@ -1,0 +1,19 @@
+org: ktall
+app: backend
+service: backend
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  httpApi:
+    cors: true
+
+functions:
+  contactForm:
+    handler: handler.contactForm
+    events:
+      - httpApi:
+          path: /contact-form
+          method: post
+    environment: ${file(env.json)}
